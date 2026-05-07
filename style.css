@@ -6,9 +6,10 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #0d0d0d;
     min-height: 100vh;
     padding: 20px;
+    color: #f5f5f5;
 }
 
 .container {
@@ -17,19 +18,21 @@ body {
 }
 
 header {
-    background: white;
+    background: #161616;
     padding: 25px;
-    border-radius: 10px;
+    border-radius: 14px;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
-    color: #667eea;
+    color: #ffffff;
     font-size: 28px;
+    letter-spacing: 1px;
 }
 
 .header-actions {
@@ -38,15 +41,16 @@ header h1 {
 }
 
 .add-form {
-    background: white;
+    background: #161616;
     padding: 25px;
-    border-radius: 10px;
+    border-radius: 14px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 .add-form h2 {
-    color: #333;
+    color: #ffffff;
     margin-bottom: 15px;
     font-size: 20px;
 }
@@ -60,48 +64,58 @@ header h1 {
 input[type="text"],
 input[type="url"],
 textarea {
-    padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 6px;
+    padding: 14px;
+    border: 1px solid #333;
+    background: #1e1e1e;
+    color: #f5f5f5;
+    border-radius: 8px;
     font-size: 14px;
-    transition: border 0.3s;
+    transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #888;
 }
 
 input:focus,
 textarea:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #6c63ff;
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.4);
 }
 
 .btn-primary {
-    background: #667eea;
+    background: linear-gradient(135deg, #6c63ff, #8b5cf6);
     color: white;
     padding: 12px 24px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: #5568d3;
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #7d74ff, #9b6dff);
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
 }
 
 .btn-secondary {
-    background: #f0f0f0;
-    color: #333;
+    background: #262626;
+    color: #f5f5f5;
     padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
+    border: 1px solid #333;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background: #e0e0e0;
+    background: #333;
 }
 
 .search-bar {
@@ -111,10 +125,16 @@ textarea:focus {
 #searchInput {
     width: 100%;
     padding: 15px;
-    border: none;
-    border-radius: 10px;
+    border: 1px solid #333;
+    background: #161616;
+    color: #f5f5f5;
+    border-radius: 12px;
     font-size: 16px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+#searchInput::placeholder {
+    color: #888;
 }
 
 .links-container {
@@ -124,16 +144,18 @@ textarea:focus {
 }
 
 .link-card {
-    background: white;
+    background: #161616;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    border-radius: 14px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
 }
 
 .link-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+    border-color: #6c63ff;
+    box-shadow: 0 8px 25px rgba(108, 99, 255, 0.2);
 }
 
 .link-header {
@@ -144,22 +166,24 @@ textarea:focus {
 }
 
 .link-info h3 {
-    color: #333;
+    color: #ffffff;
     margin-bottom: 5px;
 }
 
 .link-info a {
-    color: #667eea;
+    color: #8b5cf6;
     text-decoration: none;
     word-break: break-all;
+    transition: color 0.3s ease;
 }
 
 .link-info a:hover {
+    color: #a78bfa;
     text-decoration: underline;
 }
 
 .link-date {
-    color: #999;
+    color: #888;
     font-size: 12px;
     margin-top: 5px;
 }
@@ -170,32 +194,35 @@ textarea:focus {
 }
 
 .btn-delete {
-    background: #ff4757;
+    background: #ff3b5c;
     color: white;
     padding: 6px 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 12px;
+    transition: all 0.3s ease;
 }
 
 .btn-delete:hover {
-    background: #ee5a6f;
+    background: #ff5c77;
+    transform: scale(1.05);
 }
 
 .link-description {
-    color: #666;
+    color: #c0c0c0;
     margin-top: 10px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .no-links {
     text-align: center;
     padding: 40px;
-    background: white;
-    border-radius: 10px;
-    color: #999;
+    background: #161616;
+    border-radius: 14px;
+    border: 1px solid #2a2a2a;
+    color: #888;
 }
 
 @media (max-width: 600px) {
@@ -203,7 +230,7 @@ textarea:focus {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .link-header {
         flex-direction: column;
         gap: 10px;
