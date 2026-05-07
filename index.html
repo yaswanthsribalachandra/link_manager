@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔗 Link Manager</h1>
+            <div class="header-actions">
+                <button onclick="exportData()" class="btn-secondary">Export</button>
+                <button onclick="importData()" class="btn-secondary">Import</button>
+            </div>
+        </header>
+
+        <!-- Add Link Form -->
+        <div class="add-form">
+            <h2>Add New Link</h2>
+            <form id="linkForm">
+                <input type="text" id="linkName" placeholder="Link Name" required>
+                <input type="url" id="linkUrl" placeholder="https://example.com" required>
+                <textarea id="linkDesc" placeholder="Description (optional)" rows="2"></textarea>
+                <button type="submit" class="btn-primary">Add Link</button>
+            </form>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="🔍 Search links..." onkeyup="searchLinks()">
+        </div>
+
+        <!-- Links List -->
+        <div id="linksList" class="links-container"></div>
+    </div>
+
+    <input type="file" id="importFile" accept=".json" style="display: none;" onchange="handleImport(event)">
+
+    <script src="script.js"></script>
+</body>
+</html>
